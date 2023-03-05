@@ -3,6 +3,10 @@ vim.keymap.set("i", "jk", "<ESC>")
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
+--jump cursor to new window after creating it
+vim.keymap.set("n", "<C-w>v", "<C-w>v<C-w>l")
+vim.keymap.set("n", "<C-w>s", "<C-w>s<C-w>j")
+
 --moving highlighted lines
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
