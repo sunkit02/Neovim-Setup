@@ -1,11 +1,21 @@
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 vim.keymap.set("i", "jk", "<ESC>")
-vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>e",  ":Lex 30<cr>")
 vim.keymap.set("i", "<C-c>", "<Esc>")
+
+-- Easy sourcing of config files
+vim.keymap.set("n", "<leader><CR>", ":so %<CR>", opts)
 
 --jump cursor to new window after creating it
 vim.keymap.set("n", "<C-w>v", "<C-w>v<C-w>l")
 vim.keymap.set("n", "<C-w>s", "<C-w>s<C-w>j")
+
+-- Resize window with arrows
+vim.keymap.set("n", "<C-Up>", ":resize -2<CR>", opts)
+vim.keymap.set("n", "<C-Down>", ":resize +2<CR>", opts)
+vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", opts)
+vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 --moving highlighted lines
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
