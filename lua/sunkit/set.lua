@@ -28,8 +28,10 @@ local options = {
 
     updatetime = 50,
 
-    colorcolumn = "80",
-    pumheight = 10
+    colorcolumn = "0",
+    pumheight = 10,
+
+    cursorline = true,
 }
 
 vim.g.mapleader = " "
