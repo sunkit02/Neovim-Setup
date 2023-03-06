@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.keymap.set("i", "jk", "<ESC>")
 vim.keymap.set("i", "<C-c>", "<Esc>")
-vim.keymap.set("n", "<leader>e",  ":Lex 30<cr>")
+-- vim.keymap.set("n", "<leader>e",  ":Lex 30<cr>")
 
 
 -- Easy sourcing of config files
