@@ -53,4 +53,8 @@ return require('packer').startup(function(use)
 
     -- Comments
     use('numToStr/Comment.nvim')
+    -- Lualine
+    use('nvim-lualine/lualine.nvim')
+    -- Transparent background
+    use('xiyaowong/nvim-transparent')
 end)
