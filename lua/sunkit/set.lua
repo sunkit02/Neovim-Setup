@@ -9,7 +9,6 @@ local options = {
     expandtab = true,
 
     smartindent = true,
-    smartcase = true,
 
     wrap = false,
 
@@ -20,6 +19,8 @@ local options = {
 
     hlsearch = false,
     incsearch = true,
+    ignorecase = true,
+    smartcase = true,
 
     termguicolors = true,
 
@@ -27,6 +28,8 @@ local options = {
     signcolumn = "yes",
 
     updatetime = 50,
+    timeout = true,
+    timeoutlen = 300,
 
     colorcolumn = "0",
     pumheight = 10,
@@ -39,3 +42,15 @@ vim.g.mapleader = " "
 for k, v in pairs(options) do
     vim.opt[k] = v
 end
+
+-- [[ Highlight on yank ]]
+-- See `:help vim.highlight.on_yank()`
+local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
+vim.api.nvim_create_autocmd('TextYankPost', {
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+  group = highlight_group,
+  pattern = '*',
+})
+
