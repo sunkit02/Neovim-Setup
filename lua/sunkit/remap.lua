@@ -49,3 +49,9 @@ vim.keymap.set("n", "<leader>k", "<cmd>cprev<CR>zz")
 --start typing to replace work currently under cursor
 vim.keymap.set("n", "<leader>r", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+
+-- Better terminal navigation
+vim.keymap.set("t", "<C-w>h", "<C-\\><C-N><C-w>h", term_opts)
+vim.keymap.set("t", "<C-w>j", "<C-\\><C-N><C-w>j", term_opts)
+vim.keymap.set("t", "<C-w>k", "<C-\\><C-N><C-w>k", term_opts)
+vim.keymap.set("t", "<C-w>l", "<C-\\><C-N><C-w>l", term_opts)
