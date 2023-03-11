@@ -68,4 +68,12 @@ return require('packer').startup(function(use)
         },
         tag = 'nightly' -- optional, updated every week. (see issue #1193)
     }
+
+    -- Debugging
+    use('mfussenegger/nvim-dap')
+    use('leoluz/nvim-dap-go')
+    use('rcarriga/nvim-dap-ui')
+    use('theHamsta/nvim-dap-virtual-text')
+    use('nvim-telescope/telescope-dap.nvim')
+
 end)
