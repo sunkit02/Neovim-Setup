@@ -50,6 +50,10 @@ vim.keymap.set("n", "<leader>k", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>r", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
+-- Better tab navigation
+vim.keymap.set("n", "<leader><Left>", ":tabp<CR>");
+vim.keymap.set("n", "<leader><Right>", ":tabn<CR>");
+
 -- Better terminal navigation
 vim.keymap.set("t", "<C-w>h", "<C-\\><C-N><C-w>h", term_opts)
 vim.keymap.set("t", "<C-w>j", "<C-\\><C-N><C-w>j", term_opts)
