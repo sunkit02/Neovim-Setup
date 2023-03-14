@@ -1,64 +1,69 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-vim.keymap.set("i", "jk", "<ESC>")
-vim.keymap.set("i", "<C-c>", "<Esc>")
-vim.keymap.set("n", "<leader>e",  ":Lex 30<cr>")
-
+vim.keymap.set("i", "jk", "<ESC>", { noremap = true, silent = true, desc = "Treat quick typing 'jk' in insert mode as <Esc>" })
+vim.keymap.set("i", "<C-c>", "<Esc>", { noremap = true, silent = true, desc = "Treat <C-c> as actually hitting <Esc>" })
+-- vim.keymap.set("n", "<leader>e",  ":Lex 30<cr>")
 
 -- Easy sourcing of config files
-vim.keymap.set("n", "<leader><CR>", ":so %<CR>")
+vim.keymap.set("n", "<leader><CR>", ":so %<CR>", { noremap = true, desc = "Source the current file" })
 
 -- Jump cursor to new window after creating it
-vim.keymap.set("n", "<C-w>v", "<C-w>v<C-w>l")
-vim.keymap.set("n", "<C-w>s", "<C-w>s<C-w>j")
+vim.keymap.set("n", "<C-w>v", "<C-w>v<C-w>l", { noremap = true, silent = true, desc = "Jump to new vertical split window after opening it" })
+vim.keymap.set("n", "<C-w>s", "<C-w>s<C-w>j", { noremap = true, silent = true, desc = "Jump to new horizontal split window after opening it" })
+
+-- Better navigation
+-- Tabs
+vim.keymap.set("n", "<leader>t", ":tabnew ", { noremap = true, silent = true, desc = "Start typing name of file to open in new tab" })
+vim.keymap.set("n", "<leader><Left>", ":tabp<CR>", { noremap = true, silent = true, desc = "Move one tab to the left" })
+vim.keymap.set("n", "<leader><Right>", ":tabn<CR>", { noremap = true, silent = true, desc = "Move one tab to the right" })
+-- Windows
+vim.keymap.set("n", "<C-h>", "<C-w>h", { noremap = true, silent = true, desc = "Move one window left" })
+vim.keymap.set("n", "<C-j>", "<C-w>j", { noremap = true, silent = true, desc = "Move one window down" })
+vim.keymap.set("n", "<C-k>", "<C-w>k", { noremap = true, silent = true, desc = "Move one window up" })
+vim.keymap.set("n", "<C-l>", "<C-w>l", { noremap = true, silent = true, desc = "Move one window right" })
+-- Terminal
+vim.keymap.set("t", "<C-h>", "<C-\\><C-N><C-w>h", { silent = true, desc="Move one window left in terminal mode" })
+vim.keymap.set("t", "<C-j>", "<C-\\><C-N><C-w>j", { silent = true, desc="Move one window down in terminal mode" })
+vim.keymap.set("t", "<C-k>", "<C-\\><C-N><C-w>k", { silent = true, desc="Move one window up in terminal mode" })
+vim.keymap.set("t", "<C-l>", "<C-\\><C-N><C-w>l", { silent = true, desc="Move one window right in terminal mode" })
+vim.keymap.set("t", "<leader><Left>", "<C-\\><C-N><cmd>tabp<CR>", { silent = true, desc="Move one tab to the left in terminal mode" })
+vim.keymap.set("t", "<leader><Right>", "<C-\\><C-N><cmd>tabn<CR>", { silent = true, desc="Move one tab to the right in terminal mode" })
 
 -- Resize window with arrows
-vim.keymap.set("n", "<C-Up>", ":resize -2<CR>")
-vim.keymap.set("n", "<C-Down>", ":resize +2<CR>")
-vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>")
-vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>")
+vim.keymap.set("n", "<C-Up>", ":resize +2<CR>", { noremap = true, silent = true, desc = "Increase current window height" })
+vim.keymap.set("n", "<C-Down>", ":resize -2<CR>", { noremap = true, silent = true, desc = "Decrease current window height" })
+vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", { noremap = true, silent = true, desc = "Decrease current window width" })
+vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", { noremap = true, silent = true, desc = "Increase current window width" })
 
--- Moving highlighted lines
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+-- Line manipulation
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { noremap = true, silent = true, desc = "Move highlighted line up one line" })
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { noremap = true, silent = true, desc = "Move highlighted line down one line" })
+vim.keymap.set("n", "J", "mzJ`z", { noremap = true, silent = true, desc = "Append next line to the end of current line" })
 
--- Keeping cursor centered after jumping up and down
--- the page and searching text
-vim.keymap.set("n", "J", "mzJ`z")
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
+-- Keeping cursor centered after jumping up and down the page and searching text
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { noremap = true, silent = true, desc = "Keep cursor centered after moving half a page down" })
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true, silent = true, desc = "Keep cursor centered after moving half a page up" })
+vim.keymap.set("n", "n", "nzzzv", { noremap = true, silent = true, desc = "Keep cursor centered after jumping to the next matching regex search" })
+vim.keymap.set("n", "N", "Nzzzv", { noremap = true, silent = true, desc = "Keep cursor centered after jumping to the previous matching regex search" })
 
 -- Keeping origin buffer content after pasting over
-vim.keymap.set("x", "<leader>p", "\"_dP")
+vim.keymap.set("x", "<leader>p", "\"_dP", { noremap = true, silent = true, desc = "Keep original buffer content after pasting over highlighted text" })
 
 -- Seperating vim clipboard and system clipboard
-vim.keymap.set("n", "<leader>y", "\"+y")
-vim.keymap.set("v", "<leader>y", "\"+y")
-vim.keymap.set("n", "<leader>Y", "\"+Y")
+vim.keymap.set("n", "<leader>y", "\"+y", { noremap = true, silent = true })
+vim.keymap.set("v", "<leader>y", "\"+y", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>Y", "\"+Y", { noremap = true, silent = true })
 
-vim.keymap.set("n", "<leader>d", "\"_d")
+-- Deleting current line to void buffer
+vim.keymap.set("n", "<leader>d", "\"_d", { noremap = true, silent = true, desc = "Deleting current line to void buffer" })
 
 -- Quickfix navigations
-vim.keymap.set("n", "<C-j>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>zz")
-vim.keymap.set("n", "<leader>j", "<cmd>lnext<CR>zz")
-vim.keymap.set("n", "<leader>k", "<cmd>cprev<CR>zz")
+vim.keymap.set("n", "<C-n>", "<cmd>cnext<CR>zz", { noremap = true, silent = true, desc = "Next item on quickfix list and center cursor" })
+vim.keymap.set("n", "<C-m>", "<cmd>cprev<CR>zz", { noremap = true, silent = true, desc = "Previous item on quickfix list and center cursor" })
+vim.keymap.set("n", "<leader>j", "<cmd>lnext<CR>zz", { noremap = true, silent = true, desc = "Next item in current buffer and center cursor" })
+vim.keymap.set("n", "<leader>k", "<cmd>lprev<CR>zz", { noremap = true, silent = true, desc = "Previous item in current buffer and center cursor" })
 
 -- Start typing to replace work currently under cursor
-vim.keymap.set("n", "<leader>r", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
+vim.keymap.set("n", "<leader>r", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", { noremap = true, silent = true, desc = "Replace word under cursor in buffer" })
 -- Make current file executable
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
-
--- Better tab navigation
-vim.keymap.set("n", "<leader><Left>", ":tabp<CR>");
-vim.keymap.set("n", "<leader><Right>", ":tabn<CR>");
-
--- Better terminal navigation
-vim.keymap.set("t", "<C-w>h", "<C-\\><C-N><C-w>h", term_opts)
-vim.keymap.set("t", "<C-w>j", "<C-\\><C-N><C-w>j", term_opts)
-vim.keymap.set("t", "<C-w>k", "<C-\\><C-N><C-w>k", term_opts)
-vim.keymap.set("t", "<C-w>l", "<C-\\><C-N><C-w>l", term_opts)
-vim.keymap.set("t", "<leader><Left>", "<C-\\><C-N><cmd>tabp<CR>", term_opts)
-vim.keymap.set("t", "<leader><Right>", "<C-\\><C-N><cmd>tabn<CR>", term_opts)
+vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true }, { noremap = true, silent = true, desc = "Make current file executable by running 'chmod +x'" })
