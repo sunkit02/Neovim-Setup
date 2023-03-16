@@ -1,11 +1,11 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-vim.keymap.set("i", "jk", "<ESC>", { noremap = true, silent = true, desc = "Treat quick typing 'jk' in insert mode as <Esc>" })
+vim.keymap.set("i", "jk", "<Esc>", { noremap = true, silent = true, desc = "Treat quick typing 'jk' in insert mode as <Esc>" })
 vim.keymap.set("i", "<C-c>", "<Esc>", { noremap = true, silent = true, desc = "Treat <C-c> as actually hitting <Esc>" })
 -- vim.keymap.set("n", "<leader>e",  ":Lex 30<cr>")
 
 -- Easy sourcing of config files
-vim.keymap.set("n", "<leader><CR>", ":so %<CR>", { noremap = true, desc = "Source the current file" })
+vim.keymap.set("n", "<leader><CR>", "<cmd>so %<CR>", { noremap = true, desc = "Source the current file" })
 
 -- Jump cursor to new window after creating it
 vim.keymap.set("n", "<C-w>v", "<C-w>v<C-w>l", { noremap = true, silent = true, desc = "Jump to new vertical split window after opening it" })
@@ -13,9 +13,9 @@ vim.keymap.set("n", "<C-w>s", "<C-w>s<C-w>j", { noremap = true, silent = true, d
 
 -- Better navigation
 -- Tabs
-vim.keymap.set("n", "<leader>t", ":tabnew ", { noremap = true, silent = true, desc = "Start typing name of file to open in new tab" })
-vim.keymap.set("n", "<leader><Left>", ":tabp<CR>", { noremap = true, silent = true, desc = "Move one tab to the left" })
-vim.keymap.set("n", "<leader><Right>", ":tabn<CR>", { noremap = true, silent = true, desc = "Move one tab to the right" })
+vim.keymap.set("n", "<leader>t", "<cmd>tabnew ", { noremap = true, silent = true, desc = "Start typing name of file to open in new tab" })
+vim.keymap.set("n", "<leader><Left>", "<cmd>tabp<CR>", { noremap = true, silent = true, desc = "Move one tab to the left" })
+vim.keymap.set("n", "<leader><Right>", "<cmd>tabn<CR>", { noremap = true, silent = true, desc = "Move one tab to the right" })
 -- Windows
 vim.keymap.set("n", "<C-h>", "<C-w>h", { noremap = true, silent = true, desc = "Move one window left" })
 vim.keymap.set("n", "<C-j>", "<C-w>j", { noremap = true, silent = true, desc = "Move one window down" })
@@ -28,12 +28,19 @@ vim.keymap.set("t", "<C-k>", "<C-\\><C-N><C-w>k", { silent = true, desc="Move on
 vim.keymap.set("t", "<C-l>", "<C-\\><C-N><C-w>l", { silent = true, desc="Move one window right in terminal mode" })
 vim.keymap.set("t", "<leader><Left>", "<C-\\><C-N><cmd>tabp<CR>", { silent = true, desc="Move one tab to the left in terminal mode" })
 vim.keymap.set("t", "<leader><Right>", "<C-\\><C-N><cmd>tabn<CR>", { silent = true, desc="Move one tab to the right in terminal mode" })
+vim.keymap.set("n", "<leader>t", "<C-\\><C-N><cmd>tabnew ", { noremap = true, silent = true, desc = "Start typing name of file to open in new tab" })
 
 -- Resize window with arrows
-vim.keymap.set("n", "<C-Up>", ":resize +2<CR>", { noremap = true, silent = true, desc = "Increase current window height" })
-vim.keymap.set("n", "<C-Down>", ":resize -2<CR>", { noremap = true, silent = true, desc = "Decrease current window height" })
-vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", { noremap = true, silent = true, desc = "Decrease current window width" })
-vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", { noremap = true, silent = true, desc = "Increase current window width" })
+vim.keymap.set("n", "<C-Up>", "<cmd>resize +2<CR>", { noremap = true, silent = true, desc = "Increase current window height" })
+vim.keymap.set("n", "<C-Down>", "<cmd>resize -2<CR>", { noremap = true, silent = true, desc = "Decrease current window height" })
+vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize -2<CR>", { noremap = true, silent = true, desc = "Decrease current window width" })
+vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<CR>", { noremap = true, silent = true, desc = "Increase current window width" })
+-- Resize terminal windows
+vim.keymap.set("t", "<C-Up>", "<C-//><C-N><cmd>resize +2<CR>", { noremap = true, silent = true, desc = "Increase current window height" })
+vim.keymap.set("t", "<C-Down>", "<C-//><C-N><cmd>resize -2<CR>", { noremap = true, silent = true, desc = "Decrease current window height" })
+vim.keymap.set("t", "<C-Left>", "<C-//><C-N><cmd>vertical resize -2<CR>", { noremap = true, silent = true, desc = "Decrease current window width" })
+vim.keymap.set("t", "<C-Right>", "<C-//><C-N><cmd>vertical resize +2<CR>", { noremap = true, silent = true, desc = "Increase current window width" })
+
 
 -- Line manipulation
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { noremap = true, silent = true, desc = "Move highlighted line up one line" })
