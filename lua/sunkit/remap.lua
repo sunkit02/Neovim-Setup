@@ -16,16 +16,19 @@ vim.keymap.set("n", "<C-w>s", "<C-w>s<C-w>j", { noremap = true, silent = true, d
 vim.keymap.set("n", "<leader>t", "<cmd>tabnew ", { noremap = true, silent = true, desc = "Start typing name of file to open in new tab" })
 vim.keymap.set("n", "<leader><Left>", "<cmd>tabp<CR>", { noremap = true, silent = true, desc = "Move one tab to the left" })
 vim.keymap.set("n", "<leader><Right>", "<cmd>tabn<CR>", { noremap = true, silent = true, desc = "Move one tab to the right" })
+
+-- Commented out due to conflict with mappings for nvim-tmux-navigation plugin
 -- Windows
-vim.keymap.set("n", "<C-h>", "<C-w>h", { noremap = true, silent = true, desc = "Move one window left" })
-vim.keymap.set("n", "<C-j>", "<C-w>j", { noremap = true, silent = true, desc = "Move one window down" })
-vim.keymap.set("n", "<C-k>", "<C-w>k", { noremap = true, silent = true, desc = "Move one window up" })
-vim.keymap.set("n", "<C-l>", "<C-w>l", { noremap = true, silent = true, desc = "Move one window right" })
+-- vim.keymap.set("n", "<C-h>", "<C-w>h", { noremap = true, silent = true, desc = "Move one window left" })
+-- vim.keymap.set("n", "<C-j>", "<C-w>j", { noremap = true, silent = true, desc = "Move one window down" })
+-- vim.keymap.set("n", "<C-k>", "<C-w>k", { noremap = true, silent = true, desc = "Move one window up" })
+-- vim.keymap.set("n", "<C-l>", "<C-w>l", { noremap = true, silent = true, desc = "Move one window right" })
 -- Terminal
-vim.keymap.set("t", "<C-h>", "<C-\\><C-N><C-w>h", { silent = true, desc="Move one window left in terminal mode" })
-vim.keymap.set("t", "<C-j>", "<C-\\><C-N><C-w>j", { silent = true, desc="Move one window down in terminal mode" })
-vim.keymap.set("t", "<C-k>", "<C-\\><C-N><C-w>k", { silent = true, desc="Move one window up in terminal mode" })
-vim.keymap.set("t", "<C-l>", "<C-\\><C-N><C-w>l", { silent = true, desc="Move one window right in terminal mode" })
+-- vim.keymap.set("t", "<C-h>", "<C-\\><C-N><C-w>h", { silent = true, desc="Move one window left in terminal mode" })
+-- vim.keymap.set("t", "<C-j>", "<C-\\><C-N><C-w>j", { silent = true, desc="Move one window down in terminal mode" })
+-- vim.keymap.set("t", "<C-k>", "<C-\\><C-N><C-w>k", { silent = true, desc="Move one window up in terminal mode" })
+-- vim.keymap.set("t", "<C-l>", "<C-\\><C-N><C-w>l", { silent = true, desc="Move one window right in terminal mode" })
+
 vim.keymap.set("t", "<leader><Left>", "<C-\\><C-N><cmd>tabp<CR>", { silent = true, desc="Move one tab to the left in terminal mode" })
 vim.keymap.set("t", "<leader><Right>", "<C-\\><C-N><cmd>tabn<CR>", { silent = true, desc="Move one tab to the right in terminal mode" })
 vim.keymap.set("n", "<leader>t", "<C-\\><C-N><cmd>tabnew ", { noremap = true, silent = true, desc = "Start typing name of file to open in new tab" })

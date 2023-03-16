@@ -5,31 +5,22 @@ vim.cmd [[packadd packer.nvim]]
 --
 return require('packer').startup(function(use)
     -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
-
+    use {'wbthomason/packer.nvim'}
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.1',
         -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
-    use ('rose-pine/neovim')
-    -- use({
-    --     'rose-pine/neovim',
-    --     as = 'rose-pine',
-    --     config = function()
-    --         require("rose-pine").setup()
-    --         vim.cmd('colorscheme rose-pine')
-    --     end
-    -- })
+    -- Colorshemes
     use {"rose-pine/neovim"}
-
     use {"ellisonleao/gruvbox.nvim"}
 
-    use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-    use('nvim-treesitter/playground')
-    use('theprimeagen/harpoon')
-    use('mbbill/undotree')
-    use('tpope/vim-fugitive')
+    -- Basic tools setup
+    use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+    use ('nvim-treesitter/playground')
+    use ('theprimeagen/harpoon')
+    use ('mbbill/undotree')
+    use ('tpope/vim-fugitive')
 
     -- LSP
     use {
@@ -56,11 +47,11 @@ return require('packer').startup(function(use)
     }
 
     -- Comments
-    use('numToStr/Comment.nvim')
+    use ('numToStr/Comment.nvim')
     -- Lualine
-    use('nvim-lualine/lualine.nvim')
+    use ('nvim-lualine/lualine.nvim')
     -- Transparent background
-    use('xiyaowong/nvim-transparent')
+    use ('xiyaowong/nvim-transparent')
 
     use {
         'nvim-tree/nvim-tree.lua',
@@ -71,10 +62,13 @@ return require('packer').startup(function(use)
     }
 
     -- Debugging
-    use('mfussenegger/nvim-dap')
-    use('leoluz/nvim-dap-go')
-    use('rcarriga/nvim-dap-ui')
-    use('theHamsta/nvim-dap-virtual-text')
-    use('nvim-telescope/telescope-dap.nvim')
+    use ('mfussenegger/nvim-dap')
+    use ('leoluz/nvim-dap-go')
+    use ('rcarriga/nvim-dap-ui')
+    use ('theHamsta/nvim-dap-virtual-text')
+    use ('nvim-telescope/telescope-dap.nvim')
+
+    -- Tmux Navigation
+    use {"alexghergh/nvim-tmux-navigation"}
 
 end)

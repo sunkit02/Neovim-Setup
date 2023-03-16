@@ -179,6 +179,11 @@ _G.packer_plugins = {
     path = "/home/sunkit/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-tmux-navigation"] = {
+    loaded = true,
+    path = "/home/sunkit/.local/share/nvim/site/pack/packer/start/nvim-tmux-navigation",
+    url = "https://github.com/alexghergh/nvim-tmux-navigation"
+  },
   ["nvim-transparent"] = {
     loaded = true,
     path = "/home/sunkit/.local/share/nvim/site/pack/packer/start/nvim-transparent",
