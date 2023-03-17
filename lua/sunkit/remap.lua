@@ -1,3 +1,39 @@
+function ToggleQuickFixList()
+    if vim.fn.getwinvar(0, "&filetype") == "qf" then
+        vim.cmd("cclose")
+        return
+    end
+
+    -- Get reference initial window
+    local initial_window = vim.api.nvim_get_current_win()
+
+    local wins = vim.api.nvim_list_wins()
+
+    local is_open = false;
+    -- Check for any open quickfix lists
+    for _, win in ipairs(wins) do
+        vim.api.nvim_set_current_win(win)
+        -- Close if any are open
+        if vim.fn.getwinvar(0, "&filetype") == "qf" then
+            vim.cmd("cclose")
+            is_open = true
+        end
+    end
+
+    if is_open then
+        return
+    end
+
+    -- Open quickfix list since non is open
+    vim.cmd("copen");
+    vim.cmd("wincmd J");
+
+    -- Bring focus back on the initial window again
+    vim.api.nvim_set_current_win(initial_window)
+end
+
+
+
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.keymap.set("i", "jk", "<Esc>", { noremap = true, silent = true, desc = "Treat quick typing 'jk' in insert mode as <Esc>" })
@@ -72,6 +108,7 @@ vim.keymap.set("n", "<C-n>", "<cmd>cnext<CR>zz", { noremap = true, silent = true
 vim.keymap.set("n", "<C-m>", "<cmd>cprev<CR>zz", { noremap = true, silent = true, desc = "Previous item on quickfix list and center cursor" })
 vim.keymap.set("n", "<leader>j", "<cmd>lnext<CR>zz", { noremap = true, silent = true, desc = "Next item in current buffer and center cursor" })
 vim.keymap.set("n", "<leader>k", "<cmd>lprev<CR>zz", { noremap = true, silent = true, desc = "Previous item in current buffer and center cursor" })
+vim.keymap.set("n", "<C-q>", "<cmd>lua ToggleQuickFixList()<CR>", { noremap = true, silent = true, desc = "Previous item in current buffer and center cursor" })
 
 -- Start typing to replace work currently under cursor
 vim.keymap.set("n", "<leader>r", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", { noremap = true, silent = true, desc = "Replace word under cursor in buffer" })
