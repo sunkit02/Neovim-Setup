@@ -1,3 +1,5 @@
+local vim = vim
+
 local options = {
     nu = true,
     relativenumber = true,
@@ -35,6 +37,9 @@ local options = {
     pumheight = 10,
 
     cursorline = true,
+
+    -- foldmethod = "expr",
+    -- foldexpr = "nvim_treesitter#foldexpr()",
 }
 
 
