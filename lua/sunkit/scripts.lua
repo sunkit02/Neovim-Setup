@@ -1,5 +1,7 @@
 local vim  = vim
 
+-- Toggles the visibility of the quickfix list
+-- All open quickfix lists will be closed if multiple are allowed to be opened concurrently
 function ToggleQuickFixList()
     if vim.fn.getwinvar(0, "&filetype") == "qf" then
         vim.cmd("cclose")

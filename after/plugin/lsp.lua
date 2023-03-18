@@ -1,3 +1,4 @@
+local vim = vim
 local lsp = require("lsp-zero")
 
 lsp.preset("recommended")
