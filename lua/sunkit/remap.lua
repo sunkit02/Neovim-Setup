@@ -7,7 +7,7 @@ vim.keymap.set("i", "<C-c>", "<Esc>", { noremap = true, silent = true, desc = "T
 -- vim.keymap.set("n", "<leader>e",  ":Lex 30<cr>")
 
 -- Easy sourcing of config files
-vim.keymap.set("n", "<leader><CR>", "<cmd>so %<CR>", { noremap = true, desc = "Source the current file" })
+vim.keymap.set("n", "<leader><CR>", ":so %<CR>", { noremap = true, desc = "Source the current file" })
 
 -- Jump cursor to new window after creating it
 vim.keymap.set("n", "<C-w>v", "<C-w>v<C-w>l", { noremap = true, silent = true, desc = "Jump to new vertical split window after opening it" })
@@ -15,9 +15,8 @@ vim.keymap.set("n", "<C-w>s", "<C-w>s<C-w>j", { noremap = true, silent = true, d
 
 -- Better navigation
 -- Tabs
-vim.keymap.set("n", "<leader>t", "<cmd>tabnew ", { noremap = true, silent = true, desc = "Start typing name of file to open in new tab" })
-vim.keymap.set("n", "<leader><Left>", "<cmd>tabp<CR>", { noremap = true, silent = true, desc = "Move one tab to the left" })
-vim.keymap.set("n", "<leader><Right>", "<cmd>tabn<CR>", { noremap = true, silent = true, desc = "Move one tab to the right" })
+vim.keymap.set("n", "<leader>t", ":tabnew ", { noremap = true, silent = true, desc = "Start typing name of file to open in new tab" })
+vim.keymap.set("n", "<leader>f", "<cmd>tabe %<CR>", { noremap = true, silent = true, desc = "Open current window in a new tab as fullscreen" })
 
 -- Commented out due to conflict with mappings for nvim-tmux-navigation plugin
 -- Windows
@@ -33,7 +32,7 @@ vim.keymap.set("n", "<leader><Right>", "<cmd>tabn<CR>", { noremap = true, silent
 
 vim.keymap.set("t", "<leader><Left>", "<C-\\><C-N><cmd>tabp<CR>", { silent = true, desc="Move one tab to the left in terminal mode" })
 vim.keymap.set("t", "<leader><Right>", "<C-\\><C-N><cmd>tabn<CR>", { silent = true, desc="Move one tab to the right in terminal mode" })
-vim.keymap.set("n", "<leader>t", "<C-\\><C-N><cmd>tabnew ", { noremap = true, silent = true, desc = "Start typing name of file to open in new tab" })
+vim.keymap.set("n", "<leader>t", "<C-\\><C-N>:tabnew ", { noremap = true, silent = true, desc = "Start typing name of file to open in new tab" })
 
 -- Resize window with arrows
 vim.keymap.set("n", "<C-Up>", "<cmd>resize +2<CR>", { noremap = true, silent = true, desc = "Increase current window height" })
@@ -75,6 +74,9 @@ vim.keymap.set("n", "<C-m>", "<cmd>cprev<CR>zz", { noremap = true, silent = true
 vim.keymap.set("n", "<leader>j", "<cmd>lnext<CR>zz", { noremap = true, silent = true, desc = "Next item in current buffer and center cursor" })
 vim.keymap.set("n", "<leader>k", "<cmd>lprev<CR>zz", { noremap = true, silent = true, desc = "Previous item in current buffer and center cursor" })
 vim.keymap.set("n", "<C-q>", "<cmd>lua ToggleQuickFixList()<CR>", { noremap = true, silent = true, desc = "Previous item in current buffer and center cursor" })
+
+--Add newlines
+vim.keymap.set("n", "<CR>", "o<Esc>cc<Esc>", { noremap = true, silent = true, desc = "Inserts and move to new line below cursor" })
 
 -- Start typing to replace work currently under cursor
 vim.keymap.set("n", "<leader>r", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", { noremap = true, silent = true, desc = "Replace word under cursor in buffer" })
