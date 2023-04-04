@@ -7,7 +7,7 @@ lsp.ensure_installed({
 	'tsserver',
 	'eslint',
 	-- 'sumneko_lua',
-	'rust_analyzer'
+	'rust_analyzer',
 })
 
 local cmp = require('cmp')
@@ -20,8 +20,6 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 	['<C-Space>'] = cmp.mapping.complete(),
 })
 
---variable rename
--- vim.api.nvim_set_keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", { noremap = true })
 
 lsp.set_preferences({
 	sign_icons = { }
@@ -41,7 +39,6 @@ lsp.on_attach(function (_, bufnr)
 	vim.keymap.set("n", "<leader>vr", vim.lsp.buf.references, opts)
 	vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
 	vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
-    vim.keymap.set("n", "<C-'>", vim.lsp.buf.signature_help, opts)
     -- vim.keymap.set('<leader>D', vim.lsp.buf.type_definition, 'Type [D]efinition')
 end)
 

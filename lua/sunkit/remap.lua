@@ -15,7 +15,7 @@ vim.keymap.set("n", "<C-w>s", "<C-w>s<C-w>j", { noremap = true, silent = true, d
 
 -- Better navigation
 -- Tabs
-vim.keymap.set("n", "<leader>t", ":tabnew ", { noremap = true, silent = true, desc = "Start typing name of file to open in new tab" })
+vim.keymap.set("n", "<leader>t", ":tabnew ", { noremap = true, desc = "Start typing name of file to open in new tab" })
 vim.keymap.set("n", "<leader>f", "<cmd>tabe %<CR>", { noremap = true, silent = true, desc = "Open current window in a new tab as fullscreen" })
 
 -- Commented out due to conflict with mappings for nvim-tmux-navigation plugin
@@ -75,8 +75,6 @@ vim.keymap.set("n", "<leader>j", "<cmd>lnext<CR>zz", { noremap = true, silent = 
 vim.keymap.set("n", "<leader>k", "<cmd>lprev<CR>zz", { noremap = true, silent = true, desc = "Previous item in current buffer and center cursor" })
 vim.keymap.set("n", "<C-q>", "<cmd>lua ToggleQuickFixList()<CR>", { noremap = true, silent = true, desc = "Previous item in current buffer and center cursor" })
 
---Add newlines
-vim.keymap.set("n", "<CR>", "o<Esc>cc<Esc>", { noremap = true, silent = true, desc = "Inserts and move to new line below cursor" })
 
 -- Start typing to replace work currently under cursor
 vim.keymap.set("n", "<leader>r", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", { noremap = true, silent = true, desc = "Replace word under cursor in buffer" })
