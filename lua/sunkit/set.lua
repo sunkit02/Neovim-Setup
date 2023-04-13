@@ -38,8 +38,9 @@ local options = {
 
     cursorline = true,
 
-    -- foldmethod = "expr",
-    -- foldexpr = "nvim_treesitter#foldexpr()",
+    foldmethod = "expr",
+    foldexpr = "nvim_treesitter#foldexpr()",
+    foldenable = false,                     -- Disable folding at startup.
 }
 
 
