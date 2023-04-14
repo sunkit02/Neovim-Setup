@@ -71,4 +71,12 @@ return require('packer').startup(function(use)
     -- Tmux Navigation
     use {"alexghergh/nvim-tmux-navigation"}
 
+    -- Startup splashscreen
+    -- use {
+    --     'goolord/alpha-nvim',
+    --     config = function ()
+    --         require'alpha'.setup(require'alpha.themes.dashboard'.config)
+    --     end
+    -- }
+
 end)
