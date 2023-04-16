@@ -1,3 +1,17 @@
+local function get_file_table_from_directory(directory)
+    local file_table = {}
+    local i = 1
+    for file in io.popen("command ls -p \"" .. directory .. "\""):lines() do
+        if file:sub(-1) ~= "/" then
+            file_table[i] = file
+            i = i + 1
+        end
+    end
+
+    return file_table
+end
+
+
 local vim = vim
 local dap = require('dap')
 local dapui = require("dapui")
@@ -18,28 +32,6 @@ dap.adapters.lldb = {
     command = '/usr/bin/lldb-vscode', -- adjust as needed, must be absolute path
     name = 'lldb'
 }
-
-local function get_file_table_from_directory(directory)
-    local file_table = {}
-    local i = 1
-    for file in io.popen("command ls -p \"" .. directory .. "\""):lines() do
-        if file:sub(-1) ~= "/" then
-            file_table[i] = file
-            i = i + 1
-        end
-    end
-
-    return file_table
-end
-
-
-local options_str = ""
-local file_table = get_file_table_from_directory(vim.fn.getcwd() .. '/lua/sunkit');
-
-for i, file in pairs(file_table) do
-    print(string.format("%d. %s\n", i, file))
-    -- options_str = options_str + string.format("%d. %s\n", i, file)
-end
 
 
 dap.configurations.cpp = {

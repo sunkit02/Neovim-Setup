@@ -88,5 +88,18 @@ lsp.on_attach(function (client, bufnr)
 	vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, {buffer = bufnr, remap = false, desc = "Signature help"})
 end)
 
+-- Configure omnisharp for Unity developemnt
+-- local nvim_lsp = require('lspconfig')
+--
+-- local pid = vim.fn.getpid()
+-- -- On linux/darwin if using a release build, otherwise under scripts/OmniSharp(.Core)(.cmd)
+-- local omnisharp_bin = "/home/sunkit/.local/share/nvim/mason/packages/omnisharp/omnisharp"
+--
+-- nvim_lsp.omnisharp.setup({
+-- cmd = { omnisharp_bin, "--languageserver" , "--hostPID", tostring(pid) };
+--     root_dir = nvim_lsp.util.root_pattern("*.csproj","*.sln");
+--     ...
+-- })
+
 
 lsp.setup()
