@@ -78,5 +78,8 @@ return require('packer').startup(function(use)
     --         require'alpha'.setup(require'alpha.themes.dashboard'.config)
     --     end
     -- }
+    --
+    -- TODOs highlighting
+    use { "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" }
 
 end)
