@@ -17,6 +17,7 @@ local dap = require('dap')
 local dapui = require("dapui")
 
 vim.keymap.set("n", "<F2>", dapui.toggle)
+vim.keymap.set("n", "<F3>", dap.disconnect)
 -- vim.keymap.set("n", "<F4>", dap.debug_test)
 vim.keymap.set("n", "<F5>", dap.continue)
 vim.keymap.set("n", "<F7>", dap.step_over)
