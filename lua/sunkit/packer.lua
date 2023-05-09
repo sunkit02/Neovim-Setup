@@ -82,4 +82,11 @@ return require('packer').startup(function(use)
     -- TODOs highlighting
     use { "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" }
 
+    -- Rust tools
+    use('simrat39/rust-tools.nvim')
+    use('nvim-lua/plenary.nvim')
+
+    -- Diagnostics display
+    use { "folke/trouble.nvim", requires = "nvim-tree/nvim-web-devicons" }
+
 end)

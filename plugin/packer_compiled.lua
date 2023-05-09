@@ -219,6 +219,11 @@ _G.packer_plugins = {
     path = "/home/sunkit/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["rust-tools.nvim"] = {
+    loaded = true,
+    path = "/home/sunkit/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
+    url = "https://github.com/simrat39/rust-tools.nvim"
+  },
   ["telescope-dap.nvim"] = {
     loaded = true,
     path = "/home/sunkit/.local/share/nvim/site/pack/packer/start/telescope-dap.nvim",
@@ -228,6 +233,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/sunkit/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["todo-comments.nvim"] = {
+    loaded = true,
+    path = "/home/sunkit/.local/share/nvim/site/pack/packer/start/todo-comments.nvim",
+    url = "https://github.com/folke/todo-comments.nvim"
   },
   undotree = {
     loaded = true,
