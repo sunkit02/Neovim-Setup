@@ -61,11 +61,13 @@ vim.keymap.set("n", "N", "Nzzzv", { noremap = true, silent = true, desc = "Keep 
 vim.keymap.set("x", "<leader>p", "\"_dP", { noremap = true, silent = true, desc = "Keep original buffer content after pasting over highlighted text" })
 
 -- Seperating vim clipboard and system clipboard
-vim.keymap.set("n", "<leader>y", "\"+y", { noremap = true, silent = true })
-vim.keymap.set("v", "<leader>y", "\"+y", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>Y", "\"+Y", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>y", "\"+y", { noremap = true, silent = true, desc = "Yank to system clipboard in normal mode" })
+vim.keymap.set("v", "<leader>y", "\"+y", { noremap = true, silent = true, desc = "Yank to system clipboard in visual mode" })
+vim.keymap.set("n", "<leader>Y", "\"+Y", { noremap = true, silent = true, desc = "Yank entire line to system clipboard" })
+vim.keymap.set("n", "<leader>P", "\"+p", { noremap = true, silent = true, desc = "Paste from system clipboard in normal mode" })
+vim.keymap.set("v", "<leader>P", "\"+p", { noremap = true, silent = true, desc = "Paste from system clipboard in visual mode" })
 
--- Deleting current line to void buffer
+-- Deleting to void buffer
 vim.keymap.set("n", "<leader>d", "\"_d", { noremap = true, silent = true, desc = "Deleting current line to void buffer" })
 
 -- Quickfix navigations
