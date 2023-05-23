@@ -46,6 +46,8 @@ return require('packer').startup(function(use)
         }
     }
 
+    use { "mfussenegger/nvim-jdtls", ft = { "java" } }
+
     -- Comments
     use ('numToStr/Comment.nvim')
     -- Lualine
