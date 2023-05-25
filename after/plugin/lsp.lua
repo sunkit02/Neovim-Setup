@@ -24,7 +24,14 @@ local function super_tab()
     end
 end
 
--- vim.keymap.set("i", "<Tab>", super_tab, { noremap = true, silent = true, desc = "Super tab" })
+local function expand_luasnip()
+    if luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+    end
+end
+
+vim.keymap.set("i", "<Tab>", super_tab, { noremap = true, silent = true, desc = "Super tab" })
+vim.keymap.set("i", "<A-c>", expand_luasnip, { noremap = true, silent = true, desc = "Expand or jump luasnip" })
 
 luasnip.config.setup {}
 
