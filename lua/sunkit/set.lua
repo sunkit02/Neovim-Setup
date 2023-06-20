@@ -33,7 +33,7 @@ local options = {
     timeout = true,
     timeoutlen = 300,
 
-    colorcolumn = "0",
+    colorcolumn = "80",
     pumheight = 10,
 
     cursorline = true,

@@ -1,4 +1,4 @@
-require'nvim-treesitter.configs'.setup {
+require('nvim-treesitter.configs').setup({
     -- A list of parser names, or "all" (the five listed parsers should always be installed)
     ensure_installed = { "java", "rust", "python", "c", "lua", "vim", "help", "query" },
 
@@ -36,6 +36,11 @@ require'nvim-treesitter.configs'.setup {
             scope_incremental = '<c-s>',
             node_decremental = '<S-space>',
         },
+    },
+    filters = {
+        dotfiles = false,
+        git_clean = false,
+        custom = { "node_modules" },
     },
     textobjects = {
         select = {
@@ -81,4 +86,4 @@ require'nvim-treesitter.configs'.setup {
             },
         },
     },
-}
+})

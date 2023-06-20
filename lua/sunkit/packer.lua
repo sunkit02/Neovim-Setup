@@ -45,8 +45,16 @@ return require('packer').startup(function(use)
             {'rafamadriz/friendly-snippets'}, -- Optional
         }
     }
+    use 'hrsh7th/cmp-nvim-lsp-signature-help'
 
     use { "mfussenegger/nvim-jdtls", ft = { "java" } }
+
+    use {
+        'prettier/vim-prettier',
+        run = 'yarn install --frozen-lockfile --production',
+        ft = {'javascript', 'typescript', 'css', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'}
+    }
+
 
     -- Comments
     use ('numToStr/Comment.nvim')

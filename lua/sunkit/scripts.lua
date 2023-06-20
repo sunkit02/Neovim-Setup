@@ -36,5 +36,16 @@ function ToggleQuickFixList()
     vim.api.nvim_set_current_win(initial_window)
 end
 
+function ShowMaxWidthLine()
+    local wins = vim.api.nvim_list_wins()
+    for _, win in ipairs(wins) do
+        vim.cmd("set cc=80")
+    end
+end
 
-
+function HideMaxWidthLine()
+    local wins = vim.api.nvim_list_wins()
+    for _, win in ipairs(wins) do
+        vim.cmd("set cc=0")
+    end
+end
