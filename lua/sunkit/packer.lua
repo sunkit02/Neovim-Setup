@@ -13,6 +13,12 @@ return require('packer').startup(function(use)
     }
     -- Colorshemes
     use {"rose-pine/neovim"}
+    use {
+        "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {},
+    }
     use {"ellisonleao/gruvbox.nvim"}
 
     -- Basic tools setup
