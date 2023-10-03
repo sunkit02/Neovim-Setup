@@ -82,10 +82,9 @@ lsp.set_preferences({
 	sign_icons = { }
 })
 
-
 lsp.on_attach(function (client, bufnr)
-    -- Disabling LSP syntax highlighting when in conflict with treesitter
-    client.server_capabilities.semanticTokensProvider = nil
+  -- Disabling LSP syntax highlighting when in conflict with treesitter
+  client.server_capabilities.semanticTokensProvider = nil
 
 	vim.keymap.set("n", "gd", vim.lsp.buf.definition, {buffer = bufnr, remap = false, desc = "[G]o to [D]efinition"})
 	vim.keymap.set("n", "gD", vim.lsp.buf.declaration, {buffer = bufnr, remap = false, desc = "[G]o to [D]eclaration"})

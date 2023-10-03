@@ -106,6 +106,9 @@ return require('packer').startup(function(use)
     use { "folke/trouble.nvim", requires = "nvim-tree/nvim-web-devicons" }
 
     -- RGB and hex color display
-    use {'norcalli/nvim-colorizer.lua' }
+    use { 'norcalli/nvim-colorizer.lua' }
+
+  -- Keeping context
+  use { 'nvim-treesitter/nvim-treesitter-context' }
 
 end)

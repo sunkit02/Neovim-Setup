@@ -21,6 +21,8 @@ vim.keymap.set("n", "<C-w>s", "<C-w>s<C-w>j", { noremap = true, silent = true, d
 -- Tabs
 vim.keymap.set("n", "<leader>t", ":tabnew ", { noremap = true, desc = "Start typing name of file to open in new tab" })
 vim.keymap.set("n", "<leader>f", "<cmd>tabe %<CR>", { noremap = true, silent = true, desc = "Open current window in a new tab as fullscreen" })
+vim.keymap.set("n", "gn", "<cmd>tabn<CR>", { noremap = true, silent = true, desc = "Next tab" })
+vim.keymap.set("n", "gp", "<cmd>tabp<CR>", { noremap = true, silent = true, desc = "Previous tab" })
 
 -- Commented out due to conflict with mappings for nvim-tmux-navigation plugin
 -- Windows

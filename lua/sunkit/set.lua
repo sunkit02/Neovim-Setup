@@ -3,11 +3,11 @@ local vim = vim
 local options = {
     nu = true,
     relativenumber = true,
-    numberwidth = 4,
+    numberwidth = 2,
 
-    tabstop = 4,
-    softtabstop = 4,
-    shiftwidth= 4,
+    tabstop = 2,
+    softtabstop = 2,
+    shiftwidth= 2,
     expandtab = true,
 
     smartindent = true,
