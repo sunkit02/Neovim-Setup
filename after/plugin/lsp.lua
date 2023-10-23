@@ -84,7 +84,7 @@ lsp.set_preferences({
 
 lsp.on_attach(function (client, bufnr)
   -- Disabling LSP syntax highlighting when in conflict with treesitter
-  client.server_capabilities.semanticTokensProvider = nil
+  client.server_capabilities.semanticTokensProvider = bufnr
 
 	vim.keymap.set("n", "gd", vim.lsp.buf.definition, {buffer = bufnr, remap = false, desc = "[G]o to [D]efinition"})
 	vim.keymap.set("n", "gD", vim.lsp.buf.declaration, {buffer = bufnr, remap = false, desc = "[G]o to [D]eclaration"})
@@ -100,6 +100,7 @@ lsp.on_attach(function (client, bufnr)
 	vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, {buffer = bufnr, remap = false, desc = "Rename symbol"})
 	vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, {buffer = bufnr, remap = false, desc = "Signature help"})
 end)
+
 
 -- -- Configure omnisharp for Unity developemnt
 -- local nvim_lsp = require('lspconfig')
