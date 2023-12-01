@@ -10,6 +10,11 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   pattern = "*",
 })
 
+vim.api.nvim_create_autocmd({"BufWrite", "BufWritePre"}, {
+  pattern = {"*.rs"},
+  callback = function() vim.lsp.buf.format() end,
+})
+
 
 -- local auto_format_group = vim.api.nvim_create_augroup("AutoFormat", { clear = true })
 -- vim.api.nvim_create_autocmd("FormatOnSave", {
