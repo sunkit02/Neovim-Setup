@@ -87,4 +87,8 @@ vim.keymap.set("n", "<C-q>", "<cmd>lua ToggleQuickFixList()<CR>", { noremap = tr
 -- Start typing to replace work currently under cursor
 vim.keymap.set("n", "<leader>r", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", { noremap = true, silent = true, desc = "Replace word under cursor in buffer" })
 -- Make current file executable
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true }, { noremap = true, silent = true, desc = "Make current file executable by running 'chmod +x'" })
+vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { noremap = true, silent = true, desc = "Make current file executable by running 'chmod +x'" })
+
+
+-- Toggle linewrap
+vim.keymap.set("n", "<leader>w", "<cmd>lua ToggleLineWrap()<CR>", { noremap = true, silent = true, desc = "Toggle linewrap and associated keymaps." })
