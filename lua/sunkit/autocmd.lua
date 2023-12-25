@@ -14,10 +14,10 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 
 local auto_format_group = vim.api.nvim_create_augroup("AutoFormat", { clear = true })
-vim.api.nvim_create_autocmd({"BufWrite", "BufWritePre"}, {
+vim.api.nvim_create_autocmd({ "BufWrite", "BufWritePre" }, {
   callback = function() vim.lsp.buf.format() end,
   group = auto_format_group,
-  pattern = {"*.rs", "*.go", "*.c", "*.h", "*.cpp"},
+  pattern = { "*.rs", "*.go", "*.c", "*.h", "*.cpp", "*.lua" },
 })
 
 

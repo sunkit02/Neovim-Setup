@@ -115,11 +115,6 @@ return require('packer').startup(function(use)
   -- Markdown preview
   use({
     "iamcco/markdown-preview.nvim",
-    run = function() vim.fn["mkdp#util#install"]() end,
-  })
-
-  use({
-    "iamcco/markdown-preview.nvim",
     run = "cd app && npm install",
     setup = function()
       vim.g.mkdp_filetypes = {
@@ -127,4 +122,13 @@ return require('packer').startup(function(use)
     end,
     ft = { "markdown" },
   })
+
+  -- Live-Server
+  use {
+    'barrett-ruth/live-server.nvim',
+    build = 'yarn global add live-server',
+    config = true
+  }
+
+
 end)
