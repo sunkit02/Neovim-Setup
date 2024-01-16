@@ -1,49 +1,51 @@
 local vim = vim
 
 local options = {
-    nu = true,
-    relativenumber = true,
-    numberwidth = 2,
+  nu = true,
+  relativenumber = true,
+  numberwidth = 2,
 
-    tabstop = 2,
-    softtabstop = 2,
-    shiftwidth= 2,
-    expandtab = true,
+  tabstop = 2,
+  softtabstop = 2,
+  shiftwidth = 2,
+  expandtab = true,
 
-    smartindent = true,
+  smartindent = true,
 
-    wrap = false,
+  wrap = false,
 
-    swapfile = false,
-    backup = false,
-    undodir = os.getenv("HOME") .. "/.vim/undodir",
-    undofile = true,
+  swapfile = false,
+  backup = false,
+  undodir = os.getenv("HOME") .. "/.vim/undodir",
+  undofile = true,
 
-    hlsearch = false,
-    incsearch = true,
-    ignorecase = true,
-    smartcase = true,
+  hlsearch = false,
+  incsearch = true,
+  ignorecase = true,
+  smartcase = true,
 
-    termguicolors = true,
+  termguicolors = true,
 
-    scrolloff = 8,
-    signcolumn = "yes",
+  scrolloff = 8,
+  signcolumn = "yes",
 
-    updatetime = 50,
-    timeout = true,
-    timeoutlen = 300,
+  updatetime = 50,
+  timeout = true,
+  timeoutlen = 300,
 
-    colorcolumn = "80",
-    pumheight = 10,
+  colorcolumn = "80",
+  pumheight = 10,
 
-    cursorline = true,
+  cursorline = true,
 
-    foldmethod = "expr",
-    foldexpr = "nvim_treesitter#foldexpr()",
-    foldenable = false,                     -- Disable folding at startup.
+  foldmethod = "expr",
+  foldexpr = "nvim_treesitter#foldexpr()",
+  foldenable = false, -- Disable folding at startup.
+
+  nrformats = "bin,octal,hex,alpha"
 }
 
 
 for k, v in pairs(options) do
-    vim.opt[k] = v
+  vim.opt[k] = v
 end
