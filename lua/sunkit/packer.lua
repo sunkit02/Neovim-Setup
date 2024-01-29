@@ -135,4 +135,7 @@ return require('packer').startup(function(use)
 
   -- Vim APM (Actions Per Minute)
   use { "ThePrimeagen/vim-apm" }
+
+  -- Fidget for notifications for LSP progrss messages
+  use { "j-hui/fidget.nvim" }
 end)
