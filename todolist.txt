@@ -1,6 +1,0 @@
-Features or configurations that I would like to work on:
-
-- Project wide context aware refactoring
-- Autoformatting of file on save
-- Autorun for some files on save and display output
-    - Link to Tj's quick tutorial for soemthing similar: https://youtu.be/9gUatBHuXE0
