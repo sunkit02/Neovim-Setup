@@ -1,0 +1,2 @@
+-- require("vim-apm").setup({})
+-- vim.keymap.set("n", "<leader>apm", function() require("vim-apm").toggle_monitor() end)

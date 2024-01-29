@@ -132,4 +132,7 @@ return require('packer').startup(function(use)
 
   -- Autopairs
   use { "windwp/nvim-autopairs" }
+
+  -- Vim APM (Actions Per Minute)
+  use { "ThePrimeagen/vim-apm" }
 end)
