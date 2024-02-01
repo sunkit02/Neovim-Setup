@@ -6,7 +6,7 @@ require("transparent").setup({
     'SigColumn', 'SignColumn', 'CursorLineNr', 'EndOfBuffer',
   },
   extra_groups = {
-    'TelescopeNormal', 'TelescopeBorder', 'NvimTreeNormal', 'NvimTree'
+    'TelescopeNormal', 'TelescopeBorder', 'NvimTreeNormal'
   },                   -- table: additional groups that should be cleared
   exclude_groups = {}, -- table: groups you don't want to clear
 })
