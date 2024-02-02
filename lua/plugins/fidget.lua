@@ -102,12 +102,12 @@ return {
           string.format("%s/fidget.nvim.log", vim.fn.stdpath("cache")),
     },
   },
-  config = function(fidget, opts)
-    -- -- How to format a progress message
-    -- opts.format_message = require("fidget.progress.display").default_format_message
-    -- -- How to configure notification groups when instantiated
-    -- opts.configs = { default = require("fidget.notification").default_config }
-    --
-    -- fidget.config(opts)
+  config = function(fidget, _)
+    require("fidget").setup({
+      -- How to format a progress message
+      format_message = require("fidget.progress.display").default_format_message,
+      -- How to configure notification groups when instantiated
+      configs = { default = require("fidget.notification").default_config },
+    })
   end
 }
