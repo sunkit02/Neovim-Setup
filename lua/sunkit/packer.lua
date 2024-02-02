@@ -23,6 +23,11 @@ return require('packer').startup(function(use)
 
   -- Basic tools setup
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
+  use({
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    after = "nvim-treesitter",
+    requires = "nvim-treesitter/nvim-treesitter",
+  })
   use('nvim-treesitter/playground')
   use('theprimeagen/harpoon')
   use('mbbill/undotree')
@@ -114,6 +119,11 @@ return require('packer').startup(function(use)
   -- Markdown preview
   use({
     "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  })
+
+  use({
+    "iamcco/markdown-preview.nvim",
     run = "cd app && npm install",
     setup = function()
       vim.g.mkdp_filetypes = {
@@ -121,6 +131,7 @@ return require('packer').startup(function(use)
     end,
     ft = { "markdown" },
   })
+
 
   -- Live-Server
   use {
