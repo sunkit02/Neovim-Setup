@@ -1,4 +1,5 @@
-require("transparent").setup({
+return {
+  "xiyaowong/nvim-transparent",
   groups = { -- table: default groups
     'Normal', 'NormalNC', 'Comment', 'Constant', 'Special', 'Identifier',
     'Statement', 'PreProc', 'Type', 'Underlined', 'Todo', 'String', 'Function',
@@ -9,4 +10,4 @@ require("transparent").setup({
     'TelescopeNormal', 'TelescopeBorder', 'NvimTreeNormal'
   },                   -- table: additional groups that should be cleared
   exclude_groups = {}, -- table: groups you don't want to clear
-})
+}

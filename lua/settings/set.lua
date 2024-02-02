@@ -1,5 +1,3 @@
-local vim = vim
-
 local options = {
   nu = true,
   relativenumber = true,

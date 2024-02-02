@@ -1,5 +1,3 @@
-local vim = vim
-
 -- Toggles the visibility of the quickfix list
 -- All open quickfix lists will be closed if multiple are allowed to be opened concurrently
 function ToggleQuickFixList()
@@ -38,14 +36,14 @@ end
 
 function ShowMaxWidthLine()
   local wins = vim.api.nvim_list_wins()
-  for _, win in ipairs(wins) do
+  for _, _ in ipairs(wins) do
     vim.cmd("set cc=80")
   end
 end
 
 function HideMaxWidthLine()
   local wins = vim.api.nvim_list_wins()
-  for _, win in ipairs(wins) do
+  for _, _ in ipairs(wins) do
     vim.cmd("set cc=0")
   end
 end

@@ -1,7 +1,3 @@
-local vim = vim
-
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
 vim.keymap.set("i", "jk", "<Esc>",
   { noremap = true, silent = true, desc = "Treat quick typing 'jk' in insert mode as <Esc>" })
 vim.keymap.set("i", "<C-c>", "<Esc>", { noremap = true, silent = true, desc = "Treat <C-c> as actually hitting <Esc>" })
@@ -75,7 +71,6 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv",
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv",
   { noremap = true, silent = true, desc = "Move highlighted line down one line" })
 vim.keymap.set("n", "J", "mzJ`z", { noremap = true, silent = true, desc = "Append next line to the end of current line" })
-
 -- Keeping cursor centered after jumping up and down the page and searching text
 vim.keymap.set("n", "<C-d>", "<C-d>zz",
   { noremap = true, silent = true, desc = "Keep cursor centered after moving half a page down" })
