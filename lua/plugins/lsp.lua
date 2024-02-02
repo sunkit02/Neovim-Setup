@@ -235,11 +235,11 @@ return {
       { 'hrsh7th/cmp-nvim-lsp' },
       {
         'williamboman/mason-lspconfig.nvim',
-        config = true,
+        lazy = false,
       },
       {
         'williamboman/mason.nvim',
-        config = true,
+        lazy = false,
       },
     },
     config = function()
