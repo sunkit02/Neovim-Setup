@@ -81,12 +81,13 @@ return {
           end, { "i", "s" }),
         },
         formatting = {
-          fields = { "menu", "abbr", "kind" },
+          -- FIX: Remove the extra space left behind for showing "menu" field
+          fields = { "abbr", "kind" },
 
           format = require("lspkind").cmp_format({
-            maxwith = 50,
+            maxwith = 30,
             ellipsis_char = "...",
-            show_labelDetails = true,
+            show_labelDetails = false,
           })
         },
         sources = {
