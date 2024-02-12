@@ -25,7 +25,7 @@ return {
     event = "InsertEnter",
     dependencies = {
       "L3MON4D3/LuaSnip",
-      "onsails/lspkind.nvim"
+      -- "onsails/lspkind.nvim"
     },
     config = function()
       -- Here is where you configure the autocompletion settings.
@@ -82,13 +82,13 @@ return {
         },
         formatting = {
           -- FIX: Remove the extra space left behind for showing "menu" field
-          fields = { "abbr", "kind" },
+          fields = { "abbr", "kind", "menu" },
 
-          format = require("lspkind").cmp_format({
-            maxwith = 30,
-            ellipsis_char = "...",
-            show_labelDetails = false,
-          })
+          -- format = require("lspkind").cmp_format({
+          --   maxwidth = 20,
+          --   ellipsis_char = "...",
+          --   show_labelDetails = false,
+          -- })
         },
         sources = {
           { name = "nvim_lsp" },
