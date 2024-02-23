@@ -115,6 +115,9 @@ return {
           },
         },
       },
+      autotag = {
+        enable = true,
+      },
     }
   },
 }
