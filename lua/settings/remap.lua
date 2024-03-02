@@ -1,9 +1,10 @@
 vim.keymap.set("i", "jk", "<Esc>",
   { noremap = true, silent = true, desc = "Treat quick typing 'jk' in insert mode as <Esc>" })
 vim.keymap.set("i", "<C-c>", "<Esc>", { noremap = true, silent = true, desc = "Treat <C-c> as actually hitting <Esc>" })
--- vim.keymap.set("n", "<leader>e",  ":Lex 30<cr>")
--- vim.keymap.set("n", "<A-l>", "<cmd>:set cc=0<CR>", { noremap = true, silent = true, desc = "Toggle highlight at position 80 for code alignment" })
--- vim.keymap.set("n", "<A-L>", "<cmd>:set cc=80<CR>", { noremap = true, silent = true, desc = "Toggle highlight at position 80 for code alignment" })
+
+vim.keymap.set("n", "<Leader>w", "<cmd>wa<CR>", { noremap = true, silent = true, desc = "Save all changes." })
+vim.keymap.set("n", "<Leader>q", "<cmd>qa!<CR>", { noremap = true, silent = true, desc = "Force quit all." })
+
 vim.keymap.set("n", "<Leader>l", "<cmd>lua ShowMaxWidthLine()<CR>",
   { noremap = true, silent = true, desc = "Toggle highlight at position 80 for code alignment" })
 vim.keymap.set("n", "<Leader>L", "<cmd>lua HideMaxWidthLine()<CR>",
@@ -121,5 +122,5 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>",
 
 
 -- Toggle linewrap
-vim.keymap.set("n", "<leader>w", "<cmd>lua ToggleLineWrap()<CR>",
-  { noremap = true, silent = true, desc = "Toggle linewrap and associated keymaps." })
+-- vim.keymap.set("n", "<leader>w", "<cmd>lua ToggleLineWrap()<CR>",
+--   { noremap = true, silent = true, desc = "Toggle linewrap and associated keymaps." })
