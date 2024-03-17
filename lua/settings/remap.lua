@@ -3,7 +3,7 @@ vim.keymap.set("i", "jk", "<Esc>",
 vim.keymap.set("i", "<C-c>", "<Esc>", { noremap = true, silent = true, desc = "Treat <C-c> as actually hitting <Esc>" })
 
 vim.keymap.set("n", "<Leader>w", "<cmd>wa<CR>", { noremap = true, silent = true, desc = "Save all changes." })
-vim.keymap.set("n", "<Leader>q", "<cmd>qa!<CR>", { noremap = true, silent = true, desc = "Force quit all." })
+vim.keymap.set("n", "<Leader>q", "<cmd>qa<CR>", { noremap = true, silent = true, desc = "Quit all." })
 
 vim.keymap.set("n", "<Leader>l", "<cmd>lua ShowMaxWidthLine()<CR>",
   { noremap = true, silent = true, desc = "Toggle highlight at position 80 for code alignment" })
