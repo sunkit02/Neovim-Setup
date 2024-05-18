@@ -20,7 +20,7 @@ return {
         html = { "htmlbeautifier" },
         bash = { "beautysh" },
         proto = { "buf" },
-        rust = { "rustfmt" },
+        -- rust = { "rustfmt" },
         yaml = { "yamlfix" },
         toml = { "taplo" },
         css = { { "biome" } },
