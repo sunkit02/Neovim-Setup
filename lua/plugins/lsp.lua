@@ -1,5 +1,6 @@
 return {
   "hrsh7th/cmp-path",
+  "hrsh7th/cmp-buffer",
   {
     "VonHeikemen/lsp-zero.nvim",
     branch = "v2.x",
@@ -94,6 +95,7 @@ return {
           { name = "nvim_lsp" },
           { name = "luasnip" },
           { name = "path" },
+          { name = "buffer" },
         },
         window = {
           completion = cmp.config.window.bordered(),
