@@ -104,10 +104,10 @@ return {
   },
   config = function(fidget, _)
     require("fidget").setup({
-      -- How to format a progress message
-      format_message = require("fidget.progress.display").default_format_message,
-      -- How to configure notification groups when instantiated
-      configs = { default = require("fidget.notification").default_config },
+      -- -- How to format a progress message
+      -- format_message = require("fidget.progress.display").default_format_message,
+      -- -- How to configure notification groups when instantiated
+      -- configs = { default = require("fidget.notification").default_config },
     })
   end
 }
