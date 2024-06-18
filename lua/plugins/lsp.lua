@@ -92,10 +92,13 @@ return {
           -- })
         },
         sources = {
-          { name = "nvim_lsp" },
-          { name = "luasnip" },
-          { name = "path" },
-          { name = "buffer" },
+          { name = "nvim_lsp", priority_weight = 4 },
+          { name = "path",     priority_weight = 3 },
+          { name = "luasnip",  priority_weight = 3 },
+          { name = "buffer",   priority_weight = 3 },
+        },
+        sorting = {
+          priority_weight = 1.0,
         },
         window = {
           completion = cmp.config.window.bordered(),
