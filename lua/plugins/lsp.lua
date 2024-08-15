@@ -26,6 +26,7 @@ return {
     event = "InsertEnter",
     dependencies = {
       "L3MON4D3/LuaSnip",
+      "mlaursen/vim-react-snippets",
       -- "onsails/lspkind.nvim"
     },
     config = function()
@@ -34,6 +35,7 @@ return {
       -- https://github.com/VonHeikemen/lsp-zero.nvim/blob/v2.x/doc/md/api-reference.md#manage_nvim_cmp
 
       require("lsp-zero.cmp").extend()
+      require("vim-react-snippets").lazy_load()
       local luasnip = require("luasnip")
 
 
@@ -164,6 +166,12 @@ return {
 
       -- (Optional) Configure lua language server for neovim
       require("lspconfig").lua_ls.setup(lsp.nvim_lua_ls())
+
+      require("lspconfig").rust_analyzer.setup({
+        cargo = {
+          sysroot_query_metadata = true
+        }
+      })
 
       lsp.setup()
     end
