@@ -3,7 +3,9 @@ return {
   event = { "BufReadPre", "BufNewFile" },
   config = function()
     require("conform").setup({
-      -- formatters_by_ft = {
+      formatters_by_ft = {
+        python = { "black" }
+      },
       --   lua = { "stylua" },
       --   svelte = { { "biome" } },
       --   javascript = { { "biome" } },
