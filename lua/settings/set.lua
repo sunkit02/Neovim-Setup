@@ -40,7 +40,11 @@ local options = {
   foldexpr = "nvim_treesitter#foldexpr()",
   foldenable = false, -- Disable folding at startup.
 
-  nrformats = "bin,octal,hex,alpha"
+  nrformats = "bin,octal,hex,alpha",
+
+  -- Spell checking
+  spell = true,
+  spelllang = "en_us",
 }
 
 
