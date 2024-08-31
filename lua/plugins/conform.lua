@@ -4,7 +4,8 @@ return {
   config = function()
     require("conform").setup({
       formatters_by_ft = {
-        python = { "black" }
+        python = { "black" },
+        markdown = { "mdformat" },
       },
       --   lua = { "stylua" },
       --   svelte = { { "biome" } },
@@ -17,7 +18,6 @@ return {
       --   java = { "google-java-format" },
       --   kotlin = { "ktlint" },
       --   ruby = { "standardrb" },
-      --   markdown = { { "prettierd", "prettier" } },
       --   erb = { "htmlbeautifier" },
       --   html = { "htmlbeautifier" },
       --   bash = { "beautysh" },
