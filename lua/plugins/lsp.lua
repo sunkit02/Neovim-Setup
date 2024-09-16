@@ -123,7 +123,7 @@ return {
       {
         "williamboman/mason-lspconfig.nvim",
         opts = {
-          ensure_installed = { "lua_ls", "rust_analyzer" },
+          ensure_installed = { "lua_ls", "rust_analyzer", "tsserver" },
           automatic_installation = { exclude = {} },
         },
       },
@@ -171,6 +171,10 @@ return {
         cargo = {
           sysroot_query_metadata = true
         }
+      })
+
+      require("lspconfig").tsserver.setup({
+        filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", },
       })
 
       lsp.setup()
