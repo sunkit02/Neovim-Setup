@@ -164,18 +164,51 @@ return {
         -- lsp.default_keymaps({buffer = bufnr})
       end)
 
+      local lspconfig = require("lspconfig")
       -- (Optional) Configure lua language server for neovim
-      require("lspconfig").lua_ls.setup(lsp.nvim_lua_ls())
+      lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
 
-      require("lspconfig").rust_analyzer.setup({
+      lspconfig.rust_analyzer.setup({
         cargo = {
           sysroot_query_metadata = true
         }
       })
 
-      require("lspconfig").tsserver.setup({
+      lspconfig.tsserver.setup({
         filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", },
       })
+
+      local capabilities = vim.lsp.protocol.make_client_capabilities()
+      capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+      lspconfig.html.setup({
+        -- cmd = { "vscode-html-language-server", "--stdio" },
+        -- filetypes = { "html" },
+        -- init_options = {
+        --   configurationSection = { "html", "css", "javascript" },
+        --   embeddedLanguages = {
+        --     css = true,
+        --     javascript = true,
+        --   },
+        -- },
+        capabilities = capabilities,
+        -- settings = {},
+        -- root_dir = lspconfig.util.root_pattern(".git", "package.json"),
+      })
+
+      -- lspconfig.css.setup({
+      --   cmd = { "vscode-css-language-server", "--stdio" },
+      --   filetypes = { "html", "css" },
+      --   -- init_options = {
+      --   --   configurationSection = { "html", "css", "javascript" },
+      --   --   embeddedLanguages = {
+      --   --     css = true,
+      --   --     javascript = true,
+      --   --   },
+      --   -- },
+      --   settings = {},
+      --   root_dir = lspconfig.util.root_pattern(".git", "package.json"),
+      -- })
 
       lsp.setup()
     end
