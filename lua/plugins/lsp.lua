@@ -196,19 +196,21 @@ return {
         -- root_dir = lspconfig.util.root_pattern(".git", "package.json"),
       })
 
-      -- lspconfig.css.setup({
-      --   cmd = { "vscode-css-language-server", "--stdio" },
-      --   filetypes = { "html", "css" },
-      --   -- init_options = {
-      --   --   configurationSection = { "html", "css", "javascript" },
-      --   --   embeddedLanguages = {
-      --   --     css = true,
-      --   --     javascript = true,
-      --   --   },
-      --   -- },
-      --   settings = {},
-      --   root_dir = lspconfig.util.root_pattern(".git", "package.json"),
-      -- })
+      lspconfig.cssls.setup({
+        cmd = { "vscode-css-language-server", "--stdio" },
+        filetypes = { "css", "scss", "less" }, -- Add filetypes you want the server to support
+        settings = {
+          css = {
+            validate = true, -- Enable validation for CSS
+          },
+          scss = {
+            validate = true, -- Enable validation for SCSS
+          },
+          less = {
+            validate = true, -- Enable validation for LESS
+          },
+        }
+      })
 
       lsp.setup()
     end
