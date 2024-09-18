@@ -33,6 +33,6 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
     vim.opt_local.tabstop = 1
   end,
   group = auto_change_indent_group,
-  pattern = { "*.html", "*.css" }
+  pattern = { "*.html", "*.css", "*.md" }
 
 })
