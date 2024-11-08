@@ -212,6 +212,19 @@ return {
         }
       })
 
+      lspconfig.gopls.setup({
+        filetypes = { "go", "templ" }, -- Add template file types here
+        settings = {
+          gopls = {
+            analyses = {
+              unusedparams = true,
+            },
+            staticcheck = true,
+            templateExtensions = { "templ" }, -- Make sure these are supported
+          },
+        },
+      })
+
       lsp.setup()
     end
   },

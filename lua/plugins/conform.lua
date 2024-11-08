@@ -6,6 +6,7 @@ return {
       formatters_by_ft = {
         python = { "black" },
         markdown = { "mdformat" },
+        templ = { "templ" }
       },
       --   lua = { "stylua" },
       --   svelte = { { "biome" } },
