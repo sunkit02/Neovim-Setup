@@ -30,7 +30,7 @@ local auto_change_indent_group = vim.api.nvim_create_augroup("AutoChangeIndent",
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
   callback = function()
     vim.opt_local.shiftwidth = 2
-    vim.opt_local.tabstop = 1
+    vim.opt_local.tabstop = 2
   end,
   group = auto_change_indent_group,
   pattern = { "*.html", "*.css", "*.md" }

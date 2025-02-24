@@ -92,4 +92,5 @@ return {
   --   ft = { 'rust' },
   -- }
 
+  "norcalli/nvim-colorizer.lua",
 }
