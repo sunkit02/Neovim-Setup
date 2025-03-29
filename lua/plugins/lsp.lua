@@ -126,7 +126,7 @@ return {
           ensure_installed = {
             "lua_ls",
             "rust_analyzer",
-            "tsserver",
+            "ts_ls",
             "biome",
             "clangd",
             "gopls",
@@ -184,7 +184,7 @@ return {
         }
       })
 
-      lspconfig.tsserver.setup({
+      lspconfig.ts_ls.setup({
         filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", },
       })
 
