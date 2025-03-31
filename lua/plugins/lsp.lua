@@ -160,7 +160,8 @@ return {
           { buffer = bufnr, remap = false, desc = "[G]et [T]ype Definition" })
         vim.keymap.set("n", "gi", vim.lsp.buf.implementation,
           { buffer = bufnr, remap = false, desc = "[G]et [I]mplementations" })
-        vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = bufnr, remap = false, desc = "Hover over current symbol" })
+        vim.keymap.set("n", "K", function() vim.lsp.buf.hover({ border = "rounded" }) end,
+          { buffer = bufnr, remap = false, desc = "Hover over current symbol" })
         vim.keymap.set("n", "<leader>ws", vim.lsp.buf.workspace_symbol,
           { buffer = bufnr, remap = false, desc = "Workspace symbols" })
         vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float,
@@ -168,7 +169,9 @@ return {
         vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action,
           { buffer = bufnr, remap = false, desc = "Display available code actions" })
         vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, { buffer = bufnr, remap = false, desc = "Rename symbol" })
-        vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help,
+        vim.keymap.set("i", "<C-h>", function()
+            vim.lsp.buf.signature_help({ border = "rounded" })
+          end,
           { buffer = bufnr, remap = false, desc = "Signature help" })
 
         -- lsp.default_keymaps({buffer = bufnr})
