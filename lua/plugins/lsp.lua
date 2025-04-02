@@ -111,7 +111,11 @@ return {
   },
   {
     "williamboman/mason.nvim",
-    config = true,
+    config = {
+      ui = {
+        border = "rounded"
+      }
+    },
     lazy = false,
   },
   {
