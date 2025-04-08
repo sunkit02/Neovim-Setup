@@ -120,6 +120,11 @@ vim.keymap.set("n", "<leader>r", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left>
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>",
   { noremap = true, silent = true, desc = "Make current file executable by running 'chmod +x'" })
 
+-- Illuminate reference jumping
+vim.keymap.set("n", "]r", function() require("illuminate").goto_next_reference() end,
+  { noremap = true, silent = true, desc = "Jump to next reference using vim-illuminate" })
+vim.keymap.set("n", "[r", function() require("illuminate").goto_prev_reference() end,
+  { noremap = true, silent = true, desc = "Jump to previous reference using vim-illuminate" })
 
 -- Toggle linewrap
 -- vim.keymap.set("n", "<leader>w", "<cmd>lua ToggleLineWrap()<CR>",
