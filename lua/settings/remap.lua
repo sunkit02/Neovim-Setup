@@ -24,8 +24,8 @@ vim.keymap.set("n", "<C-w>s", "<C-w>s<C-w>j",
 vim.keymap.set("n", "<leader>t", ":tabnew ", { noremap = true, desc = "Start typing name of file to open in new tab" })
 vim.keymap.set("n", "<leader>f", "<cmd>tabe %<CR>",
   { noremap = true, silent = true, desc = "Open current window in a new tab as fullscreen" })
-vim.keymap.set("n", "gn", "<cmd>tabn<CR>", { noremap = true, silent = true, desc = "Next tab" })
-vim.keymap.set("n", "gp", "<cmd>tabp<CR>", { noremap = true, silent = true, desc = "Previous tab" })
+-- vim.keymap.set("n", "gn", "<cmd>tabn<CR>", { noremap = true, silent = true, desc = "Next tab" })
+-- vim.keymap.set("n", "gp", "<cmd>tabp<CR>", { noremap = true, silent = true, desc = "Previous tab" })
 
 -- Commented out due to conflict with mappings for nvim-tmux-navigation plugin
 -- Windows
@@ -117,8 +117,8 @@ vim.keymap.set("n", "<C-q>", "<cmd>lua ToggleQuickFixList()<CR>",
 vim.keymap.set("n", "<leader>r", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
   { noremap = true, silent = true, desc = "Replace word under cursor in buffer" })
 -- Make current file executable
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>",
-  { noremap = true, silent = true, desc = "Make current file executable by running 'chmod +x'" })
+-- vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>",
+--   { noremap = true, silent = true, desc = "Make current file executable by running 'chmod +x'" })
 
 -- Illuminate reference jumping
 vim.keymap.set("n", "]r", function() require("illuminate").goto_next_reference() end,
@@ -129,3 +129,13 @@ vim.keymap.set("n", "[r", function() require("illuminate").goto_prev_reference()
 -- Toggle linewrap
 -- vim.keymap.set("n", "<leader>w", "<cmd>lua ToggleLineWrap()<CR>",
 --   { noremap = true, silent = true, desc = "Toggle linewrap and associated keymaps." })
+
+local gitsigns = require("gitsigns")
+vim.keymap.set("n", "]h", function() gitsigns.nav_hunk("next") end,
+  { noremap = true, silent = false, desc = "Navigate to next git hunk" })
+vim.keymap.set("n", "[h", function() gitsigns.nav_hunk("prev") end,
+  { noremap = true, silent = false, desc = "Navigate to prev git hunk" })
+vim.keymap.set("n", "<leader>gd", gitsigns.diffthis,
+  { noremap = true, silent = false, desc = "Git diff this file" })
+vim.keymap.set("n", "<leader>gS", gitsigns.stage_hunk,
+  { noremap = true, silent = false, desc = "Stage this hunk" })
