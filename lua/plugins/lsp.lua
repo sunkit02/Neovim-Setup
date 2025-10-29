@@ -192,6 +192,7 @@ return {
       })
 
       lspconfig.ts_ls.setup({
+        root_dir = require("lspconfig.util").root_pattern("package.json", "tsconfig.json", ".git"),
         filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", },
       })
 
