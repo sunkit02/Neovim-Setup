@@ -45,6 +45,8 @@ local options = {
   -- Spell checking
   spell = true,
   spelllang = "en_us",
+
+  grepprg = "rg --vimgrep --smart-case",
 }
 
 
