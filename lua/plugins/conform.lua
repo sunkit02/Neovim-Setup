@@ -7,7 +7,7 @@ return {
         python = { "black" },
         markdown = { "mdformat" },
         templ = { "templ" },
-        javascript = { { "biome" } },
+        javascript = { "biome" },
       },
       --   lua = { "stylua" },
       --   svelte = { { "biome" } },
