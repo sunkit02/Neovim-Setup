@@ -3,11 +3,16 @@ return {
   event = { "BufReadPre", "BufNewFile" },
   config = function()
     require("conform").setup({
+      log_level = vim.log.levels.DEBUG,
       formatters_by_ft = {
         python = { "black" },
         markdown = { "mdformat" },
         templ = { "templ" },
-        javascript = { "biome" },
+        javascript = { "biome", "biome-organize-imports" },
+        javascriptreact = { "biome", "biome-organize-imports" },
+        typescript = { "biome", "biome-organize-imports" },
+        typescriptreact = { "biome", "biome-organize-imports" },
+        json = { "biome" },
       },
       --   lua = { "stylua" },
       --   svelte = { { "biome" } },
